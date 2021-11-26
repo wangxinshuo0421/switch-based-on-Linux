@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "packet.h": "c",
+        "mac.h": "c",
+        "unistd.h": "c",
+        "ether.h": "c",
+        "base.h": "c",
+        "*.tcc": "c",
+        "limits": "c",
+        "streambuf": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "log.h": "c"
+    }
+}
