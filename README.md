@@ -68,26 +68,36 @@ Wireshark：2.6.10
 3. 基于Ubuntu系统，在mininet平台验证交换机程序的正确性
 
 ①. 首先通过make命令，对所有代码进行联合编译。
+
 ②. 打开终端，运行sudo python2 three_nodes_bw.py命令，启动老师给定的拓扑结构。
+
 ③. 在mininet平台上，通过xterm s1 h2 h3命令，启动s1,h2,h3的虚拟终端。
+
 ④. 在s1上运行./switch命令，启动交换机程序。
+
 ⑤. 在h2和h3上运行sudo wireshark命令，启动wireshark软件，并监听各自的eth0端口的网络数据。至此的运行界面如图1所示。
+
 ⑥. 在mininet中运行h1 ping h2和h1 ping h3命令。
+
 h1 ping h2的结果如图2所示，在h2-eth0端口捕获到了源地址为h1目的地址为h2的数据包，同时，在h3-eth0端口没有捕捉到来自h1的数据包，只有ARP的广播地址包。
 h1 ping h3的结果如图3所示，在h3-eth0端口捕获到了源地址为h1目的地址为h3的数据包，同时，在h2-eth0端口没有捕捉到来自h1的数据包，只有ARP的广播地址包。
 老化操作如图4所示，s1主机展示了删除表项的信息（最后一行）。
 实验结果表明，基本符合实验要求，实现了交换机对数据包的转发功能以及转发表的维护。
 
  ![image](https://user-images.githubusercontent.com/40001579/143566406-7e7110b9-eb7b-47e0-9a55-bf9e70cb5818.png)
+ 
 图1 实验初始化环境展示
 
 ![image](https://user-images.githubusercontent.com/40001579/143566419-e81963fc-3848-42fd-894d-6f6186ead78a.png)
+
 图2 h1 ping h2 实验结果
 
  ![image](https://user-images.githubusercontent.com/40001579/143566441-65bffc07-7c4c-4c13-b595-5088e242b2f8.png)
+ 
 图3 h1 ping h3 实验结果
 
 ![image](https://user-images.githubusercontent.com/40001579/143566449-406502d5-eb45-4835-8b01-7c9f14c527e6.png)
+
 图4 s1交换机删除表项信息
 
 六、	实验问题分析
